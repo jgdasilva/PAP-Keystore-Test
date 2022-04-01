@@ -6,7 +6,8 @@ server:
     port: "${PING_PORT:-8443}"
     keyStoreType: "PKCS12"
     # the server keystore file from the vault
-    keyStorePath: "config/keystore.p12"
+    # keyStorePath: "config/keystore.p12"
+    keyStorePath: "/run/secrets/keystore.p12"
     # the password for the keystore as a variable secret
     keyStorePassword: "${JGD_PAP_KEYSTORE_PASSWORD}"
     certAlias: "server-cert"
@@ -18,7 +19,8 @@ server:
     port: "${PING_ADMIN_PORT:-8444}"
     keyStoreType: "PKCS12"
     # the admin keystore file from the vault
-    keyStorePath: "config/admin-keystore.p12"
+    # keyStorePath: "config/admin-keystore.p12"
+    keyStorePath: "/run/secrets/admin-keystore.p12"
     # the password for the keystore as a variable secret
     keyStorePassword: "${JGD_PAP_ADMIN_KEYSTORE_PASSWORD}"
     certAlias: "admin-cert"
